@@ -1,0 +1,268 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Nav from '../components/Nav.astro';
+import Card from '../components/Card.astro';
+import Tag from '../components/Tag.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ContactLink from '../components/ContactLink.astro';
+import photoOfAlli from '../assets/photoofalli.jpeg';
+import catEmoji from '../assets/catemoji.png';
+import greenTiger from '../assets/pixel-art/GreenTiger.png';
+import seahorse from '../assets/pixel-art/seahorse.gif';
+import tapes from '../assets/pixel-art/tapes.jpg';
+---
+
+<Layout>
+  <Nav />
+  <main role="main">
+    <!-- HERO -->
+    <section id="home" class="hero bg-surface min-h-screen flex items-center justify-center relative pt-20 px-8 pb-16 overflow-hidden max-[600px]:px-6">
+      <canvas id="pixel-grid" class="pixel-grid"></canvas>
+      <div class="relative max-w-180 text-center">
+        <div class="mb-4"><Tag label="open to new roles" color="primary" size="lg"/></div>
+        <div class="flex items-baseline justify-center gap-2 md:gap-4">
+          <h1 class="text-hero font-bold tracking-[-0.03em] leading-[1.05] mb-4 text-text">Hi, I'm <span class="gradient-text">Alli</span><span class="text-primary">.</span></h1>
+          <Image src={catEmoji} alt="smiling cat pixel art emoji" class="size-9 md:size-16"/> 
+        </div>
+        <p class="text-hero-sub font-alt text-muted font-medium mb-6 tracking-[0.01em]">Engineering leader. Design thinker. Pixel artist.</p>
+        <p class="text-prose text-accent-text leading-[1.7] max-w-140 mx-auto mb-10">
+          Product-minded engineer and former founder focused on thoughtful UX, frontend architecture, accessibility, and AI-assisted experiences.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <Button href="#contact">Let's work together</Button>
+          <Button href="#pixel-art" color="alt" variant="outline">Pixel art</Button>
+        </div>
+      </div>
+      <div class="scroll-hint absolute bottom-8 left-1/2 -translate-x-1/2 text-border text-[1.2rem]">↓</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-pad">
+      <div class="site-container">
+        <SectionHeading>About</SectionHeading>
+        <div class="flex items-baseline gap-4 mb-6 flex-wrap">
+          <p class="m-0 shrink-0 font-alt text-primary text-sm">open to</p>
+          <div class="flex gap-3 flex-wrap">
+            <Tag label=`Remote &middot; Hybrid/On-site in Grand Rapids, MI`/>
+            <Tag label="Full time &middot; Contract"/>
+          </div>
+        </div>
+        <div class="flex flex-col items-center md:block">
+          <Image
+            src={photoOfAlli}
+            alt="Photo of Alli"
+            class="w-full max-w-2xs float-none md:float-left rounded ring-2 ring-white/20 mt-2 mr-8 mb-4"
+          />
+          <div>
+            <p class="text-prose-sm md:text-prose leading-[1.8] text-muted mb-5">
+              I'm a product-minded engineer and technical leader who enjoys turning complex problems into intuitive, scalable user experiences. I care just as much about how teams work together as I do about what they ship.
+            </p>
+            <p class="text-prose-sm md:text-prose leading-[1.8] text-muted mb-5">
+              With deep expertise in UI/UX, frontend architecture, and design systems, I combine hands-on engineering fluency with strategic product judgment. I've led cross-functional initiatives in Node/React/TypeScript environments, aligning design, product, and engineering around clear user outcomes. I've guided teams through high-stakes technical decisions with conviction and clarity.
+            </p>
+            <p class="text-prose-sm md:text-prose leading-[1.8] text-muted mb-5">
+              My leadership style is grounded in trust, long-term thinking, and a genuine commitment to usability. I believe that leadership doesn't have to come with a title or specific organizational structure. I care about building things that hold up: in the codebase, on the team, and for the user.
+            </p>
+            <p class="text-prose-sm md:text-prose leading-[1.8] text-muted">
+              When I'm not building software, I'm finding ways to be creative. I make pixel art: a different kind of systems thinking, imagination contained by little squares.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I BRING -->
+    <section id="work" class="section-pad bg-surface">
+      <div class="site-container">
+        <SectionHeading>What I bring</SectionHeading>
+        <div class="grid grid-cols-3 gap-6 max-[900px]:grid-cols-1">
+          <Card variant="work" title="Engineering Manager">
+            I grow high-performing teams through clarity, trust, and genuine investment in each person's growth. My management style is thoughtful and hands-on. I lead with clear expectations, honest feedback, and enough trust for good engineers to do their best work.
+          </Card>
+          <Card variant="work" title="Tech Lead">
+            I'm comfortable owning technical direction in messy and ambiguous spaces: shaping architecture, making tradeoffs, and aligning people around a practical path forward. I care about quality.
+          </Card>
+          <Card variant="work" title="Staff Product Engineer">
+            I bring strong product instincts to frontend-heavy systems. I'm especially good at turning ambiguous requirements into cohesive user experiences, connecting design and engineering decisions, and raising the quality of the product as a whole.
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section-pad">
+      <div class="site-container">
+        <SectionHeading>Expertise</SectionHeading>
+        <div class="grid grid-cols-3 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-8">
+          <div>
+            <h3 class="font-alt text-xs text-primary tracking-widest uppercase mb-5">Engineering</h3>
+            <div class="flex flex-wrap gap-2">
+              <Tag label="React" />
+              <Tag label="TypeScript" />
+              <Tag label="Frontend Architecture" />
+              <Tag label="Design Systems" />
+              <Tag label="Performance" />
+              <Tag label="Accessibility" />
+              <Tag label="SQL" />
+              <Tag label="Data Visualization" />
+            </div>
+          </div>
+          <div>
+            <h3 class="font-alt text-xs text-primary tracking-widest uppercase mb-5">Leadership</h3>
+            <div class="flex flex-wrap gap-2">
+              <Tag label="Technical Strategy" />
+              <Tag label="Cross-functional Alignment" />
+              <Tag label="Mentorship" />
+              <Tag label="Team Building" />
+              <Tag label="Navigating Ambiguity" />
+            </div>
+          </div>
+          <div>
+            <h3 class="font-alt text-xs text-primary tracking-widest uppercase mb-5">Product &amp; Design</h3>
+            <div class="flex flex-wrap gap-2">
+              <Tag label="Product Thinking" />
+              <Tag label="UX Strategy" />
+              <Tag label="Information Architecture" />
+              <Tag label="Prototyping" />
+              <Tag label="Figma" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIXEL ART -->
+    <section id="pixel-art" class="section-pad bg-alt-bg border-t border-t-alt/10 border-b border-b-alt/10">
+      <div class="site-container">
+        <SectionHeading color="alt">Pixel Art</SectionHeading>
+        <p class="text-prose-sm md:text-prose text-alt-text leading-[1.75] max-w-160 mb-12">
+          I make pixel art. I love the constraint of the medium — every pixel placed with intention, storytelling compressed into tiny spaces. It's a different kind of systems thinking, and I find it endlessly satisfying.
+        </p>
+        <div class="grid grid-cols-3 gap-4 mb-12 max-[900px]:grid-cols-2 max-[500px]:grid-cols-1">
+          <div>
+            <Image src={greenTiger} alt="Green Tiger pixel art" class="w-full h-auto rounded-sm" style="image-rendering: pixelated;" />
+          </div>
+          <div class="flex items-center justify-center rounded-sm" style="background-color: #4dc8f0;">
+            <img src={seahorse.src} alt="Seahorse pixel art" class="w-full h-auto" style="image-rendering: pixelated;" />
+          </div>
+          <div>
+            <Image src={tapes} alt="Tapes pixel art" class="w-full h-auto rounded-sm" style="image-rendering: pixelated;" />
+          </div>
+        </div>
+        <div class="text-center py-12 px-8 border border-alt/20 bg-alt/3">
+          <p class="text-base text-muted mb-0 max-w-120 mx-auto leading-[1.7]">I occasionally take commissions. If you have a project in mind — a game asset, a portrait, a cross stitch pattern, or something else entirely, let's chat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-pad">
+      <div class="site-container">
+        <SectionHeading color="accent">Let's talk</SectionHeading>
+        <p class="text-prose-sm md:text-prose text-muted leading-[1.75] max-w-160 mb-12">
+          If you're hiring for a product-minded engineering role, exploring consulting work, or just want to say hi, I'd love to hear from you.
+        </p>
+        <div class="flex flex-col gap-4">
+          <ContactLink href="mailto:alli@allitreman.com">
+            <Icon name="pixel:envelope" class="text-xl text-accent"/>
+            Email
+          </ContactLink>
+          <ContactLink href="https://github.com/allirense" target="_blank" rel="noopener noreferrer">
+            <Icon name="pixel:github" class="text-xl text-accent"/>
+            github.com/allirense
+          </ContactLink>
+          <ContactLink href="https://linkedin.com/in/allirense" target="_blank" rel="noopener noreferrer">
+            <Icon name="pixel:linkedin" class="text-xl text-accent"/>
+            linkedin.com/in/treman
+          </ContactLink>
+          <ContactLink href="https://bsky.app/profile/alli.ink" target="_blank" rel="noopener noreferrer">
+            <Icon name="pixel:bluesky" class="text-xl text-accent"/>
+            @alli.ink
+          </ContactLink>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="p-8 text-center border-t border-border" role="contentinfo">
+    <p class="text-[0.8rem] text-muted font-alt tracking-[0.05em] m-0">Alli Treman &mdash; built with care.</p>
+  </footer>
+  <script>
+    const COLORS = [
+      "rgba(187, 245, 81, 0.5)",
+      "rgba(81, 219, 245, 0.5)",
+      "rgba(124, 131, 245, 0.5)",
+      "rgba(206, 81, 245, 0.5)",
+    ];
+
+    const PIXEL_SIZE = 20;
+    const GAP = 2;
+    const CELL = PIXEL_SIZE + GAP;
+
+    const canvas = document.getElementById("pixel-grid") as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d")!;
+
+    let pixels: { x: number; y: number; baseAlpha: number; alpha: number; color: string; pulseSpeed: number; pulseOffset: number; }[] = [];
+    let mouse = { x: -100, y: -100 };
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+
+      const cols = Math.ceil(canvas.width / CELL);
+      const rows = Math.ceil(canvas.height / CELL);
+
+      pixels = [];
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          pixels.push({
+            x: c * CELL,
+            y: r * CELL,
+            baseAlpha: Math.random() * 0.03,
+            alpha: 0,
+            color: COLORS[Math.floor(Math.random() * COLORS.length)],
+            pulseSpeed: 0.5 + Math.random() * 2,
+            pulseOffset: Math.random() * Math.PI * 2,
+          });
+        }
+      }
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    canvas.closest("section")!.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    });
+    canvas.closest("section")!.addEventListener("mouseleave", () => {
+      mouse = { x: -100, y: -100 };
+    });
+
+    function animate(time: number) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const t = time * 0.001;
+
+      for (const p of pixels) {
+        const dx = mouse.x - (p.x + PIXEL_SIZE / 2);
+        const dy = mouse.y - (p.y + PIXEL_SIZE / 2);
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const proximity = Math.max(0, 1 - dist / 150);
+
+        const pulse = (Math.sin(t * p.pulseSpeed + p.pulseOffset) + 1) / 2;
+        p.alpha = p.baseAlpha + pulse * 0.02 + proximity * 0.4;
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.min(p.alpha, 0.6);
+        ctx.fillRect(p.x, p.y, PIXEL_SIZE, PIXEL_SIZE);
+      }
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  </script>
+</Layout>

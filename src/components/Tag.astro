@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string;
+  color?: 'basic' | 'primary';
+  size?: 'sm' | 'lg'
+}
+
+const { label, color = 'basic', size = 'sm' } = Astro.props;
+
+const cls = {
+  basic: { sm: 'text-xs text-text px-3 py-1 bg-surface/50', lg: 'text-sm text-text px-5 py-2 bg-surface/50 uppercase' },
+  primary:  { sm: 'text-xs text-primary px-3 py-1 bg-bg/50', lg: 'text-sm text-primary px-5 py-2 bg-bg/50 uppercase animated-text hover:border-primary/50 transition-colors' },
+}[color][size];
+---
+
+<span class={`${cls} inline-block border border-border rounded-lg font-semibold`}><span>{label}</span></span>

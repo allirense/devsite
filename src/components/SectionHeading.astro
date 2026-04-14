@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  color?: 'primary' | 'accent' | 'alt';
+}
+
+const { color = 'primary' } = Astro.props;
+
+const iconColor = {
+  primary: 'text-primary',
+  accent: 'text-accent',
+  alt: 'text-alt',
+}[color];
+---
+
+<h2 class="text-section-heading font-alt tracking-[-0.02em] mb-12 flex items-center gap-3 text-text">
+  <Icon name="pixel:star-solid" class={`text-sm ${iconColor}`} />
+  <slot />
+</h2>
