@@ -1,0 +1,30 @@
+---
+interface Props {
+  href: string;
+  color?: 'primary' | 'accent' | 'alt';
+  variant?: 'solid' | 'outline';
+}
+
+const { href, color = 'primary', variant = 'solid' } = Astro.props;
+
+const base = 'inline-block py-3 px-7 font-semibold text-prose-sm font-sans tracking-[0.02em] rounded-xs transition-all duration-200 cursor-pointer hover:-translate-y-px';
+
+const cls = {
+  primary: {
+    solid:   `${base} bg-primary text-on-primary hover:bg-primary-hover`,
+    outline: `${base} border-[1.5px] bg-bg border-ui/50 text-primary hover:border-primary hover:bg-surface`,
+  },
+  accent: {
+    solid:   `${base} bg-accent text-on-primary hover:brightness-110`,
+    outline: `${base} border-[1.5px] bg-bg border-accent/50 text-accent-text hover:border-accent hover:bg-surface`,
+  },
+  alt: {
+    solid:   `${base} bg-alt text-on-primary hover:brightness-110`,
+    outline: `${base} border-[1.5px] bg-bg border-alt/50 text-alt-text hover:border-alt hover:bg-surface`,
+  },
+}[color][variant];
+---
+
+<a href={href} class={cls}>
+  <slot />
+</a>

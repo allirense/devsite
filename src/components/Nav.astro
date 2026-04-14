@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+import NavLink from './NavLink.astro';
+import catEmoji from '../assets/catemoji.png';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-100 px-8 h-15 flex items-center bg-nav/85 backdrop-blur-md border-b border-border max-[600px]:px-6" role="navigation">
+  <div class="site-container w-full flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2 font-alt text-2xl tracking-[-0.02em] text-text"><Image src={catEmoji} alt="smiling cat pixel art emoji" class="size-6"/><span>alli<span class="text-primary">.</span></span></a>
+    <div class="flex gap-8 max-[600px]:gap-5">
+      <NavLink href="#about">about</NavLink>
+      <NavLink href="#work">work</NavLink>
+      <NavLink href="#pixel-art">pixel art</NavLink>
+      <NavLink href="#contact">contact</NavLink>
+    </div>
+  </div>
+</nav>
