@@ -1,5 +1,35 @@
 ---
 import '../styles/global.css'
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	imageAlt?: string;
+}
+
+const {
+	title = 'Alli Treman | Engineering Leader & Product Engineer',
+	description = 'Alli Treman is a product-minded engineering leader focused on thoughtful UX, frontend architecture, accessibility, and AI-assisted experiences.',
+	image = '/ogimage.png',
+	imageAlt = 'Alli Treman portfolio preview',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const imageURL = new URL(image, Astro.site).toString();
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Alli Treman',
+	url: canonicalURL,
+	email: 'mailto:alli@allitreman.com',
+	jobTitle: 'Engineering Leader',
+	sameAs: [
+		'https://github.com/allirense',
+		'https://linkedin.com/in/allirense',
+		'https://bsky.app/profile/alli.ink',
+	],
+};
 ---
 
 <!doctype html>
@@ -9,14 +39,34 @@ import '../styles/global.css'
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Alli Rense — engineering leader, systems thinker, and pixel artist. Open to EM, tech lead, and staff product engineer roles." />
-		<meta property="og:title" content="Alli Rense" />
-		<meta property="og:description" content="Engineering leader. Systems thinker. Pixel artist." />
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Alli Treman" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#0f1016" />
+		<link rel="canonical" href={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:site_name" content="Alli Treman" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:image:secure_url" content={imageURL} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageURL} />
+		<meta name="twitter:image:alt" content={imageAlt} />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-		<title>Alli Rense</title>
 	</head>
 	<body>
 		<slot />
